@@ -1,5 +1,5 @@
 #labels Featured
-#Duplicate Files is a Java powerful tool to find duplicate files on your system!
+* Duplicate Files is a Java powerful tool to find duplicate files on your system *
 
 = Features=
 
