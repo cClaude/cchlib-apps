@@ -58,7 +58,7 @@ public class B2TransformApp
     @Override//LazyBatchRunnerLocaleResources
     public String getTextFrameTitle()
     {
-        return "Transformation B2 en fichier text 128 caractères par ligne";
+        return "Transformation B2 en fichier text 128 caractÃ¨res par ligne";
     }
 
     @Override//LazyBatchRunnerLocaleResources
