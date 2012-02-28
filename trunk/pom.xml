@@ -33,7 +33,7 @@
       <snapshots>
        <enabled>true</enabled>
        <!-- updatePolicy>always|daily|interval:XXXminutes|never</updatePolicy -->
-       <updatePolicy>interval:60</updatePolicy>
+       <updatePolicy>daily</updatePolicy>
       </snapshots>
     </repository>
   </repositories>
