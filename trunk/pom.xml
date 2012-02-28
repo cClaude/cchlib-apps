@@ -26,7 +26,8 @@
     <repository>
       <id>cchlib.snapshots</id>
       <name>cchlib Repository (snapshots)</name>
-      <url>http://cchlib.googlecode.com/svn/maven-repo/snapshots</url>
+      <!-- url>http://cchlib.googlecode.com/svn/maven-repo/snapshots</url -->
+      <url>http://cchlib.googlecode.com/svn/maven-repo</url>
       <releases>
        <enabled>false</enabled>
       </releases>
