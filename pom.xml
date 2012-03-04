@@ -93,20 +93,12 @@
   <dependencies>
     <dependency>
       <groupId>com.googlecode.cchlib</groupId>
-      <artifactId>cchlib-core</artifactId>
+      <artifactId>cchlib-swing</artifactId>
       <version>4.1.7-SNAPSHOT</version>
       <type>jar</type>
       <scope>compile</scope>
     </dependency>
-<!--
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.16</version>
-      <type>jar</type>
-      <scope>compile</scope>
-    </dependency>
--->
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
