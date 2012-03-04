@@ -3,7 +3,6 @@ package cnamts.gui;
 import java.net.URL;
 import java.util.ResourceBundle;
 import org.apache.log4j.Logger;
-
 import com.googlecode.cchlib.swing.batchrunner.lazy.LazyBatchRunnerCustomJPanelFactory;
 import com.googlecode.cchlib.swing.batchrunner.verylazy.VeryLazyBatchRunnerApp;
 import com.googlecode.cchlib.swing.batchrunner.verylazy.VeryLazyBatchTask;
