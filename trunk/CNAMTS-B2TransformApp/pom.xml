@@ -14,7 +14,7 @@
   <url>http://SET_AN_URL_HERE/</url>
 
   <properties>
-    <jarMainClass>cnamts.gui.B2TransformApp</jarMainClass>
+    <jarMainClass>cnamts.gui.B2Transform2App</jarMainClass>
     <jarPackageName>cnamts.gui</jarPackageName>
     <jarSplashScreenImage>cnamts/gui/splash.png</jarSplashScreenImage>
   </properties>
