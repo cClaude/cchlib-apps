@@ -20,7 +20,14 @@
   </properties>
 
   <dependencies>
-   </dependencies>
+    <dependency>
+      <groupId>com.googlecode.cchlib</groupId>
+      <artifactId>cchlib-swing</artifactId>
+      <version>4.1.7-SNAPSHOT</version>
+      <type>jar</type>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
 
   <build>
     <finalName>${project.name}-${project.version}-r${buildNumber}</finalName>
