@@ -30,11 +30,10 @@ public class Main
             }
 
         for( int instanceNumber : instanceNumbers ) {
-            new LockInstancePorts(instanceNumber, SLEEP_MS).reserveInstance();
+            new LockInstancePorts(instanceNumber, SLEEP_MS).startServices();
             }
 
-        try { Thread.sleep( 1000 ); }
-        catch( InterruptedException ignore ) {}
+        sleep();
 
         logger.info( "Reservation for " + instanceNumbers.length + " instance(s). Done." );
 
@@ -45,5 +44,11 @@ public class Main
     {
         System.err.println( "Usage: java -jar " + Main.class.getName() + " [instanceNumber]+" );
         System.exit( -1 );
+    }
+
+    private static void sleep()
+    {
+        try { Thread.sleep( SLEEP_MS ); }
+        catch( InterruptedException ignore ) {}
     }
 }
