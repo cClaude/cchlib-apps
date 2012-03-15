@@ -112,6 +112,7 @@
   <modules>
     <module>cchlib-apps-sample1</module>
     <module>CNAMTS-B2TransformApp</module>
+    <module>CNAMTS-SynchronyReservePorts</module>
   </modules>
 
 </project>
