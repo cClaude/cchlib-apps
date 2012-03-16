@@ -1,5 +1,8 @@
 package cnamts.synchrony;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.apache.log4j.Logger;
 import cnamts.synchrony.port.LockInstancePorts;
 
@@ -9,6 +12,8 @@ import cnamts.synchrony.port.LockInstancePorts;
 public class Main
 {
     private final static Logger logger = Logger.getLogger( Main.class );
+
+    // Milliseconds between launching two services
     private static final long SLEEP_MS = 100;
 
     public final static void main(String[] args)
@@ -17,11 +22,21 @@ public class Main
             printHelp();
             }
 
-        int[] instanceNumbers = new int[args.length];
+        // Use an HashSet to avoid doubles !
+        Set<Integer> instanceNumbers = new HashSet<Integer>();
 
         for(int i =0; i<args.length; i++ ) {
             try {
-                instanceNumbers[ i ] = Integer.parseInt( args[ i ] );
+                int num = Integer.parseInt( args[ i ] );
+
+                if( num < 0 || num > 9 ) {
+                    System.err.println(
+                        "Instance number must be a value in [0..9]"
+                        );
+                    printHelp();
+                    }
+
+                instanceNumbers.add( num );
                 }
             catch( NumberFormatException e ) {
                 System.err.println( "Bad number: " + args[ i ] );
@@ -33,9 +48,9 @@ public class Main
             new LockInstancePorts(instanceNumber, SLEEP_MS).startServices();
             }
 
-        sleep();
+        LockInstancePorts.sleep( SLEEP_MS * 10 );
 
-        logger.info( "Reservation for " + instanceNumbers.length + " instance(s). Done." );
+        logger.info( "Reservation for " + instanceNumbers.size() + " instance(s). Done." );
 
         System.out.println( "CTRL-C to leave." );
     }
@@ -46,9 +61,4 @@ public class Main
         System.exit( -1 );
     }
 
-    private static void sleep()
-    {
-        try { Thread.sleep( SLEEP_MS ); }
-        catch( InterruptedException ignore ) {}
-    }
 }
