@@ -12,7 +12,7 @@ import cnamts.synchrony.port.clientsupport.ClientWorker;
 public class ServerWorker implements Runnable
 {
     private final static Logger logger = Logger.getLogger( ServerWorker.class );
-	private final int serverPort;
+    private final int serverPort;
 
     /**
      *
@@ -25,27 +25,31 @@ public class ServerWorker implements Runnable
         this.serverPort = serverPort;
     }
 
-	public void run() 
-	{
+    public void run()
+    {
         listenSocket( serverPort );
-	}
+    }
 
     public static void listenSocket( final int serverPort )
     {
         ServerSocket server;
 
         try{
-            logger.info( "Listen on port: " + serverPort );
+            logger.trace( "Listen on port: " + serverPort );
             server = new ServerSocket( serverPort );
             }
         catch( BindException e ) {
-            logger.fatal( "BindException * Could not listen on port: " + serverPort );
+            final String msg = "BindException * Could not listen on port: " + serverPort;
+            logger.fatal( msg );
+            System.err.println( msg );
             return;
             }
         catch( Exception e ) {
-            logger.fatal( "Could not listen on port: " + serverPort, e );
+            final String msg = "Could not listen on port: " + serverPort;
+            logger.fatal( msg, e );
+            System.err.println( msg );
             return;
-              }
+            }
 
         while( true ) {
             ClientWorker w;

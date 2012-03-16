@@ -44,6 +44,8 @@
             <manifest>
               <mainClass>${jarMainClass}</mainClass>
               <packageName>${jarPackageName}</packageName>
+              <!-- KO Build-Number>${buildNumber}</Build-Number -->
+              <!-- KO buildNumber>123</buildNumber -->
               <addClasspath>true</addClasspath>
             </manifest>
           </archive>
@@ -66,6 +68,7 @@
                   <include>commons-codec:commons-codec</include>
                 </includes -->
               </artifactSet>
+              <!-- Not what is expected: createSourcesJar>true</createSourcesJar -->
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ComponentsXmlResourceTransformer" />
                 </transformers>

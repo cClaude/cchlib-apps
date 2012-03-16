@@ -32,8 +32,8 @@ public class LockInstancePorts
     {
         logger.info( "Reserve instance: " + instanceNumber );
 
-        final int portBase    = 20000 + (100 * instanceNumber);
-        final int portBaseMax = 20000 + (100 * (instanceNumber + 1) );
+        final int portBase    = computeFirstPort( instanceNumber );
+        final int portBaseMax = computeFirstPort( instanceNumber + 1 );
 
         logger.info( String.format( "Instance range : [%d-%d]", portBase, portBaseMax ) );
 
@@ -43,10 +43,20 @@ public class LockInstancePorts
             }
     }
 
-    private void sleep()
+    private static int computeFirstPort( int instanceNumber )
+    {
+        return 20000 + (100 * instanceNumber);
+    }
+
+    public static void sleep( final long sleepMillis )
     {
         try { Thread.sleep( sleepMillis ); }
         catch( InterruptedException ignore ) {}
+    }
+
+    private void sleep()
+    {
+        sleep( sleepMillis );
     }
 
     private void startService( int serverPort )
