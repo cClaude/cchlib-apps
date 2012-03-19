@@ -1,7 +1,7 @@
 package cnamts.synchrony;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 import org.apache.log4j.Logger;
 import cnamts.synchrony.port.LockInstancePorts;
@@ -23,7 +23,7 @@ public class Main
             }
 
         // Use an HashSet to avoid doubles !
-        Set<Integer> instanceNumbers = new HashSet<Integer>();
+        Set<Integer> instanceNumbers = new TreeSet<Integer>();
 
         for(int i =0; i<args.length; i++ ) {
             try {
