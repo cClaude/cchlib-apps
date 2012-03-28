@@ -14,6 +14,7 @@ public class MailLineInputStream extends InputStream
     private boolean prev_0D;
     private boolean prev_0D0A;
     private byte[] lineBuffer = new byte[ 1024 ];
+    private int currentLineNumber; // TODO
 
     /**
      *
@@ -93,7 +94,7 @@ public class MailLineInputStream extends InputStream
      *
      * @return
      */
-    private boolean isEOF()
+    boolean isEOF()
     {
         return this.isEOF;
     }
@@ -112,5 +113,10 @@ public class MailLineInputStream extends InputStream
     private boolean isEOL()
     {
         return this.prev_0D0A;
+    }
+
+    public int getLineNumber()
+    {
+        return this.currentLineNumber;
     }
 }
