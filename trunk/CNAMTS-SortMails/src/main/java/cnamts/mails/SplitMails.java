@@ -23,11 +23,12 @@ public class SplitMails implements Iterable<InputStream>
      *
      * @param thunderbirdMailFile
      * @throws FileNotFoundException
+     * @throws IOException
      */
     public SplitMails(
         final File thunderbirdMailFile
         )
-        throws FileNotFoundException
+        throws FileNotFoundException, IOException
     {
         this.thunderbirdMails = new MailLineInputStream(
                 new BufferedInputStream(
@@ -67,11 +68,12 @@ public class SplitMails implements Iterable<InputStream>
             while( (c = in.read()) != -1 ) {
                 buffer[ index++ ] = (byte)c;
                 }
-            
+
             logger.info(
                     String.format(
-                        "MSG (%d):",
+                        "MSG (%d - %d):",
                         index,
+                        instance.thunderbirdMails.getLineNumber(),
                         new String( buffer, 0, index )
                         )
                     );
@@ -86,24 +88,15 @@ public class SplitMails implements Iterable<InputStream>
     {
         return new Iterator<InputStream>()
             {
-                private MailInputStream lastMIS = null;
-
                 @Override
                 public boolean hasNext()
                 {
-                    if( lastMIS == null ) {
-                        return true;
-                        }
-                    else {
-                        return lastMIS.isEOF();
-                        }
+                    return thunderbirdMails.isEOF();
                 }
                 @Override
                 public InputStream next()
                 {
-                    lastMIS = new MailInputStream( thunderbirdMails );
-
-                    return lastMIS;
+                    return new MailInputStream( thunderbirdMails );
                }
                 @Override
                 public void remove()
