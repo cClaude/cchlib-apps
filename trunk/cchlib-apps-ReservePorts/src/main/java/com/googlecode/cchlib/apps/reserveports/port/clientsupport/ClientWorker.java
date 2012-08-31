@@ -1,4 +1,4 @@
-package cnamts.synchrony.port.clientsupport;
+package com.googlecode.cchlib.apps.reserveports.port.clientsupport;
 
 import java.io.BufferedReader;
 import java.io.Closeable;
