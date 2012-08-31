@@ -7,8 +7,8 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <name>CNAMTS-SynchronyReservePorts</name>
-  <artifactId>CNAMTS-SynchronyReservePorts</artifactId>
+  <name>ReservePorts</name>
+  <artifactId>cchlib-apps-ReservePorts</artifactId>
   <packaging>jar</packaging>
   <description>App based on cchlib</description>
   <url>http://SET_AN_URL_HERE/</url>
@@ -18,8 +18,8 @@
     <project.javadoc.source.version>1.5</project.javadoc.source.version>
     <project.javadoc.target.version>1.5</project.javadoc.target.version>
 
-    <jarMainClass>cnamts.synchrony.Main</jarMainClass>
-    <jarPackageName>cnamts.synchrony</jarPackageName>
+    <jarMainClass>com.googlecode.cchlib.apps.reserveports.Main</jarMainClass>
+    <jarPackageName>com.googlecode.cchlib.apps.reserveports</jarPackageName>
   </properties>
 
   <dependencies>

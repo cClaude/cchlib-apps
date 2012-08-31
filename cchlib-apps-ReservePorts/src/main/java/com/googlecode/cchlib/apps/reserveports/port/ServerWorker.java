@@ -1,9 +1,10 @@
-package cnamts.synchrony.port;
+package com.googlecode.cchlib.apps.reserveports.port;
 
 import java.net.BindException;
 import java.net.ServerSocket;
 import org.apache.log4j.Logger;
-import cnamts.synchrony.port.clientsupport.ClientWorker;
+
+import com.googlecode.cchlib.apps.reserveports.port.clientsupport.ClientWorker;
 
 /**
  *
